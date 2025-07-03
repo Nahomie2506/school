@@ -116,6 +116,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Citation */
+        .quote {
+            font-style: italic;
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #fcd34d;
+            text-shadow: 1px 1px #00000055;
+        }
     </style>
 </head>
 <body>
@@ -132,7 +141,12 @@
     <!-- Main Content -->
     <main>
         <h2 data-fade>Bienvenue sur <span style="color: #fde047;">T.T.G Network</span></h2>
-        <p data-fade>La plateforme scolaire intelligente qui facilite la gestion des étudiants, cours, notes, enseignants et plus encore.</p>
+        <p data-fade>
+            La plateforme scolaire intelligente qui facilite la gestion des étudiants, cours, notes, enseignants et plus encore.
+        </p>
+        <p class="quote" data-fade>
+            « L’éducation est l’arme la plus puissante pour changer le monde. » — Nelson Mandela
+        </p>
 
         <div data-fade>
             <a href="{{ route('register') }}" class="btn btn-white" style="text-decoration:none;">Créer un compte</a>
