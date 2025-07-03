@@ -1,171 +1,193 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bienvenue - T.T.G Network</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bienvenue - T.T.G Network</title>
 
-    <!-- Style de secours si pas d'accès Internet -->
-    <style>
-        body {
-            margin: 0;
-            font-family: system-ui, sans-serif;
-            background: linear-gradient(to right, #4338ca, #7e22ce, #db2777);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            color: white;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        header, footer {
-            max-width: 1200px;
-            width: 100%;
-            margin: auto;
-            padding: 20px;
-        }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: #111827;
+      color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-        }
+    header, footer {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
 
-        nav a:hover {
-            color: #facc15;
-        }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #facc15;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+    nav {
+      margin-top: 0.5rem;
+    }
 
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px #00000055;
-        }
+    nav a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #facc15;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-        p {
-            font-size: 1.125rem;
-            max-width: 600px;
-            color: #e5e5e5;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px #00000033;
-        }
+    nav a:hover {
+      color: #fde047;
+    }
 
-        .btn {
-            padding: 12px 30px;
-            margin: 0 10px;
-            font-weight: bold;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-        .btn-yellow {
-            background-color: #facc15;
-            color: #1e3a8a;
-        }
+    .content {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      max-width: 750px;
+      width: 100%;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 1s ease-out;
+    }
 
-        .btn-yellow:hover {
-            background-color: #fde047;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .btn-white {
-            background-color: white;
-            color: #3730a3;
-        }
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #facc15;
+    }
 
-        .btn-white:hover {
-            background-color: #f4f4f4;
-        }
+    h2 span {
+      color: #fde047;
+    }
 
-        .link {
-            display: block;
-            margin-top: 20px;
-            color: #fff;
-            text-decoration: underline;
-        }
+    p {
+      font-size: 1.125rem;
+      color: #e5e7eb;
+      margin-bottom: 1.5rem;
+    }
 
-        .link:hover {
-            color: #fde047;
-        }
+    .quote {
+      font-style: italic;
+      font-size: 1rem;
+      color: #facc15;
+      margin-bottom: 2rem;
+    }
 
-        footer {
-            background-color: #312e81;
-            text-align: center;
-            font-size: 0.875rem;
-        }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      margin: 0.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-decoration: none;
+      background-color: #facc15;
+      color: #111827;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+    }
 
-        /* Animation */
-        [data-fade] {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
+    .btn:hover {
+      background-color: #fde047;
+      transform: translateY(-2px);
+    }
 
-        [data-fade].show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    footer {
+      background-color: #1f2937;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #d1d5db;
+      padding: 1rem;
+    }
 
-        /* Citation */
-        .quote {
-            font-style: italic;
-            font-size: 1rem;
-            margin-top: 10px;
-            color: #fcd34d;
-            text-shadow: 1px 1px #00000055;
-        }
-    </style>
+    [data-fade] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    [data-fade].show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1 style="font-size: 2rem; font-weight: bold;">T.T.G Network</h1>
-        <nav style="margin-top: 10px;">
-            <a href="{{ route('register') }}">Créer un compte</a>
-            <a href="{{ route('login') }}">Se connecter</a>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1>T.T.G Network</h1>
+    <nav>
+      <a href="{{ route('register') }}">Créer un compte</a>
+      <a href="{{ route('login') }}">Se connecter</a>
+    </nav>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <h2 data-fade>Bienvenue sur <span style="color: #fde047;">T.T.G Network</span></h2>
-        <p data-fade>
-            La plateforme scolaire intelligente qui facilite la gestion des étudiants, cours, notes, enseignants et plus encore.
-        </p>
-        <p class="quote" data-fade>
-            « L’éducation est l’arme la plus puissante pour changer le monde. » — Nelson Mandela
-        </p>
+  <!-- Main Content -->
+  <main>
+    <div class="content" data-fade>
+      <h2>Bienvenue sur <span>T.T.G Network</span></h2>
+      <p>
+       T.T.G Network est bien plus qu’un simple outil : c’est un compagnon fiable, pensé pour simplifier votre quotidien, structurer vos données et vous faire gagner du temps. Que ce soit pour suivre les étudiants, organiser les cours, gérer les notes ou coordonner les équipes, notre solution place l’efficacité, la clarté et la tranquillité d’esprit au cœur de votre expérience.
+      </p>
+      <p class="quote">
+        « Une bonne gestion aujourd’hui, c’est du temps gagné demain.  »
+      </p>
+      <div>
+        <a href="{{ route('register') }}" class="btn">Créer un compte</a>
+        <a href="{{ route('login') }}" class="btn">Se connecter</a>
+      </div>
+    </div>
+  </main>
 
-        <div data-fade>
-            <a href="{{ route('register') }}" class="btn btn-white" style="text-decoration:none;">Créer un compte</a>
-            <a href="{{ route('login') }}" class="btn btn-white" style="text-decoration:none;">Se connecter</a>
-        </div>
-    </main>
+  <!-- Footer -->
+  <footer>
+    © {{ date('Y') }} <strong>T.T.G Network</strong>. Tous droits réservés.
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        © {{ date('Y') }} <strong>T.T.G Network</strong>. Tous droits réservés.
-    </footer>
-
-    <!-- Animation JS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll('[data-fade]').forEach(el => {
-                setTimeout(() => el.classList.add('show'), 200);
-            });
-        });
-    </script>
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('[data-fade]').forEach(el => {
+        setTimeout(() => el.classList.add('show'), 200);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -75,7 +75,6 @@
                     <option value="etudiant">Étudiant</option>
                     <option value="formateur">Formateur</option>
                     <option value="parent">Parent</option>
-                    <option value="admin">Admin</option>
                 </select>
                 @error('role')
                     <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
